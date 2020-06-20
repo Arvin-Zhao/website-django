@@ -4,4 +4,4 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse("filebrowser index")
+    return render(request, "filebrowser/index.html")
