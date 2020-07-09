@@ -1,6 +1,34 @@
 {% extends "filebrowser/base.html" %}
-
-{% block title %} Filebrowser {% endblock title %}
+{% block title %} FileBrowser {% endblock title %}
+{% load static%}
 {% block mainBody %}
-<p> add static css/js </p>
+    <table class="table table-hover table-responsive-lg">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date modified</th>
+                <th>Type</th>
+                <th>Size</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in dir_info|dictsort:sort|dictsort:'Type' %}
+            <tr>
+                {% if item.IsDir %}
+                    {% include "filebrowser/list_item_folder.html" with item=item %}
+                {% elif item.IsFile %}
+                    {% include "filebrowser/list_item_file.html" with item=item %}
+                {% elif item.IsLink %}
+                    {% include "filebrowser/list_item_link.html" with item=item %}
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    {{ dir_info }}
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
 {% endblock mainBody %}
+
