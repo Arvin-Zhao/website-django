@@ -1,0 +1,10 @@
+<td>
+    {% load html_extras %}
+    {% url "file_browser_index" path|path_join:item.Name as the_url %}
+    <a href="{{ the_url }}">
+        <i class="type-des {{ item.Type }}"></i> {{ item }}
+    </a>
+</td>
+<td> {{ item.UpdatedAt|date:"m/d/Y H:i" }} </td>
+<td> {{ item.Type }} </td>
+<td></td>
