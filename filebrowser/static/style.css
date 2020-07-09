@@ -1,0 +1,40 @@
+i.type-des{
+    display: inline-block;
+    width: 30px;
+    font-style: normal;
+    font-size: larger;
+}
+i.type-des:before{
+    font-family:"Font Awesome 5 Free";
+    content: "\f15b";
+    color: lightskyblue;
+}
+i.type-des.Folder:before{
+    font-family:"Font Awesome 5 Free";
+    content: "\f07c";
+    color: lightskyblue;
+}
+
+i.type-des.gitignore:before{
+    font-family:"Font Awesome 5 Brands";
+    content: "\f1d2";
+    color: cornflowerblue;
+}
+
+i.type-des.py:before{
+    font-family:"Font Awesome 5 Brands";
+    content: "\f3e2";
+    color: #6fc0e0;
+}
+i.type-des.sqlite3:before{
+    font-family:"Font Awesome 5 Free";
+    content: "\f1c0";
+    color: #22b8cf;
+    font-weight: 900;
+}
+i.type-des.xml:before{
+    font-family:"Font Awesome 5 Free";
+    content: "\f1c9";
+    color: dimgrey;
+    font-weight: 400;
+}
