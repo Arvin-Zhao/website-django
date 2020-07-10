@@ -17,7 +17,7 @@
                 {% if item.IsDir %}
                     {% include "filebrowser/list_item_folder.html" with item=item %}
                 {% elif item.IsFile %}
-                    {% include "filebrowser/list_item_file.html" with item=item %}
+                    {% include "filebrowser/list_item_file.html" with item=item path=path %}
                 {% elif item.IsLink %}
                     {% include "filebrowser/list_item_link.html" with item=item %}
                 {% endif %}
@@ -28,7 +28,7 @@
 
 
     {{ dir_info }}
-
 <link rel="stylesheet" href="{% static 'style.css' %}">
+<script src="{% static 'index.js' %}"></script>
 {% endblock mainBody %}
 

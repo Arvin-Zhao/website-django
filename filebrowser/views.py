@@ -1,6 +1,7 @@
 import datetime
 import os
 
+from django.http import FileResponse
 from django.shortcuts import render
 
 from website import settings
@@ -23,6 +24,14 @@ def index(request, path='', sort='Name'):
         dir_info.insert(0, PathDirInfo(os.path.join(basePath, "..")))
     return render(request, "filebrowser/index.html", {"dir_info": dir_info, "sort": sort, "path":path})
 
+
+def getImg(request,path):
+    full_path = os.path.join(basePath, path)
+    file = open(full_path,'rb')
+    response = FileResponse(file)
+    response['Content-Type'] = 'application/octet-stream'
+    response['Content-Disposition'] = 'attachment;filename="'+os.path.basename(path)+'"'
+    return response
 
 class PathInfoFactory:
     @staticmethod

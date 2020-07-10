@@ -1,4 +1,12 @@
-<td> <i class="type-des {{ item.Type }}"></i> {{ item }} </td>
+<td>
+    {% load html_extras %}
+    {% if item.Type == 'jpg' or item.Type == 'gif' or item.Type == 'png'%}
+        {% url "file_browser_img" path|path_join:item.Name as img_src %}
+        <img class="type-des-pic" src="{{ img_src }}" alt="{{ item }}"> {{ item }}
+    {% else %}
+        <i class="type-des {{ item.Type }}"></i> {{ item }}
+    {% endif %}
+</td>
 <td> {{ item.UpdatedAt|date:"m/d/Y H:i" }} </td>
 <td> {{ item.Type }} </td>
 <td> {{ item.FileSize|filesizeformat }} </td>
