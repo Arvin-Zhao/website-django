@@ -7,6 +7,8 @@ $(function () {
             img_div.appendTo($("#carousel1>.carousel-inner"))
         })
         $(".modal").modal('show');
-
+        $(".modal").on("hidden.bs.modal", function (e) {
+            $("#carousel1>.carousel-inner").empty()
+        })
     })
 })

@@ -120,4 +120,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-FILE_BROWSER_BASE_PATH = 'C:\\Users\\wdwzh\\Pictures\\'
+FILE_BROWSER_BASE_PATH = '.'

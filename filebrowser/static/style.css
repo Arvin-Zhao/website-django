@@ -45,6 +45,21 @@ i.type-des.xml:before{
 }
 
 .img_preview{
-    background: black;
     text-align: center;
+    height: 100%;
+}
+.img_preview>img{
+    max-width: 100%;
+    max-height: 100%;
+}
+#carousel1{
+    margin-top: 10%;
+    background: black;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    text-align: center;;
+}
+#picmodal>.modal-dialog{
+    height: 80%;
 }
