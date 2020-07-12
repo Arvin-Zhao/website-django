@@ -1,8 +1,14 @@
 <td>
     {% load html_extras %}
     {% if item.Type == 'jpg' or item.Type == 'gif' or item.Type == 'png'%}
-        {% url "file_browser_img" path|path_join:item.Name as img_src %}
+        {% url "file_browser_file_download" path|path_join:item.Name as img_src %}
         <img class="type-des-pic" src="{{ img_src }}" alt="{{ item }}"> {{ item }}
+
+    {% elif item.Type == 'mp4' %}
+        {% url "file_browser_video_play" path|path_join:item.Name as video_src %}
+        <a href="{{ video_src }}" target="_blank">
+            <i class="type-des video"></i> {{ item }}
+        </a>
     {% else %}
         <i class="type-des {{ item.Type }}"></i> {{ item }}
     {% endif %}

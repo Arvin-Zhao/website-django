@@ -44,6 +44,13 @@ i.type-des.xml:before{
     font-weight: 400;
 }
 
+i.type-des.video:before{
+    font-family:"Font Awesome 5 Free";
+    content: "\f008";
+    color: dimgrey;
+    font-weight: 900;
+}
+
 .img_preview{
     text-align: center;
     height: 100%;
@@ -58,7 +65,7 @@ i.type-des.xml:before{
     height: 80%;
     display: flex;
     justify-content: center;
-    text-align: center;;
+    text-align: center;
 }
 #picmodal>.modal-dialog{
     height: 80%;

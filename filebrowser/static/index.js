@@ -6,9 +6,9 @@ $(function () {
             if($(item).attr("src") == img_url) img_div.addClass("active")
             img_div.appendTo($("#carousel1>.carousel-inner"))
         })
-        $(".modal").modal('show');
-        $(".modal").on("hidden.bs.modal", function (e) {
+        $("#picmodal").modal('show');
+    })
+    $("#picmodal").on("hidden.bs.modal", function (e) {
             $("#carousel1>.carousel-inner").empty()
-        })
     })
 })
